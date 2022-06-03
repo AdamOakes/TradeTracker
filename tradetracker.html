@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <head>
+    <div class="wrapper">
+      <div class="main-container">
+        <div class="track-container">
+          <div>
+            <h1 class="win-percent">WINRATE: </h1><h1 class="win-percent" id="win-rate">0</h1>
+          </div>
+          <div>
+            <p class="num-trades">Total No. Of Trades: </p> <p class="num-trades" id="num-trades">0</p>
+          </div>
+        </div>
+          <div class="tracker-container">
+            <div class="won-tracker">
+              <p class="won-title">WON</p>
+              <p id="won-num">0</p>
+            </div>
+            <div class="loss-tracker">
+              <p class="loss-title">LOST</p>
+              <p id="loss-num">0</p>
+            </div>
+        </div>
+        <div class="button-container">
+          <div class="profit">
+            <input type="number" id="profit-input" name="profit-input" value=""/>
+            <button onclick="tradeTracker('profit')" class="profit-button" type="button" name="profit-button">+ ADD PROFIT</button>
+          </div>
+          <div class="loss">
+            <input type="number" id="loss-input" name="loss-input" value=""/>
+            <button onclick="tradeTracker('loss')" class="loss-button" type="button" name="loss-button">- ADD LOSS</button>
+          </div>
+        </div>
+        <div class="stats">
+          <p id="stats"></p>
+
+        </div>
+        
+        <div class="graph">
+         <h3>Profit Graph</h3>
+          <div class="canvas-container">
+            <canvas id="myChart" width="300" height="300"></canvas>
+            </div>
+        </div>
+        <div class="trade-list">
+            <h3>Trades</h3>
+            <p id="tradelog">...</p>
+        </div>
+        <div class="reset">
+            <button onclick="reset()" type="button" name="reset">RESET</button>
+            <button id="action" onclick="download()" type="button" name="download">DOWNLOAD</button>
+        </div>
+      </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="behaviour.js"></script>
+</html>
